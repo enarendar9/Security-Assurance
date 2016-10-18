@@ -1,0 +1,9 @@
+1.With no Compile options the stack wouldn't overflow and the shell wont open.
+
+
+2. Buffer Overflows overwrite memory from lower to higher memory addresses, inorder to overwrite the return pointer and to take control of the program, the canary value must also be overwritten. This value is checked to make sure it has not changed before a routine uses the return pointer on the stack. in order to turn of the stack canary we use the option -fno-stack-protector will make the option available.
+
+
+3. Linux systems actually mark the stack as non-executable except in certain situations, means if the PC finds itself in stack memory, an immediate error is thrown with a program crash. to overwrite this challenge we use the option execstack in the execution with a flag -s.
+
+4.  Both the option execstack with a flag s and no stack protector will allow the buffer overflow to overwrite the shell by writing in the stack memory. 

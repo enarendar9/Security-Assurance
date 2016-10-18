@@ -1,0 +1,12 @@
+Script started on Sun Mar  6 15:04:45 2016
+$ whoami
+seclab
+$ as part1.s            ./part1
+$ as  as part1.s -o part1.o
+$ ld part1.o -o part1
+$ ./part1
+$ exit
+$ exit
+$ exit
+
+Script done on Sun Mar  6 15:05:41 2016

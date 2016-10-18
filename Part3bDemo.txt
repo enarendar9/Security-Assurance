@@ -1,0 +1,93 @@
+Script started on Mon 07 Mar 2016 06:34:01 PM EST
+]0;seclab@SecurityLabUbuntu64: ~/HWA2seclab@SecurityLabUbuntu64:~/HWA2$ ./bu[K[KBU[K[KV[KBuffer[K[K[K[K[K[Kpart3b [K
+
+
+Error: No Command Line arg for vuln was given
+
+
+Value of Test:7fffffffb818
+Value of filename[0]:7fffffffb410
+The attack buffer is going to need to be a little bit bigger than:2b50
+$ exit
+]0;seclab@SecurityLabUbuntu64: ~/HWA2seclab@SecurityLabUbuntu64:~/HWA2$ ./part3b [1P[1P[1P[1P[1P[1P[1P[1P [Kgcc -z [K[K[K[K[K[K[Kgcc -z execstack [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kgcc part3b.c -o part3b
+part3b.c: In function ‘dumb’:
+part3b.c:43:11: warning: assignment makes integer from pointer without a cast [enabled by default]
+      *hold=filename;
+           ^
+part3b.c: In function ‘main’:
+part3b.c:61:7: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘size_t’ [-Wformat=]
+       printf("\\Length of Input String:%d\\", strlen(string));
+       ^
+]0;seclab@SecurityLabUbuntu64: ~/HWA2seclab@SecurityLabUbuntu64:~/HWA2$ ,[K./part3b
+
+
+Error: No Command Line arg for vuln was given
+
+
+Value of Test:7fffffffb3f8
+Value of filename[0]:7fffffffb400
+The attack buffer is going to need to be a little bit bigger than:ffff800000004c00
+]0;seclab@SecurityLabUbuntu64: ~/HWA2seclab@SecurityLabUbuntu64:~/HWA2$ gcc execstac [K[K[K[K[K[K[K[K[K-z execstack part3b.c-[K -o part3b
+part3b.c: In function ‘dumb’:
+part3b.c:43:11: warning: assignment makes integer from pointer without a cast [enabled by default]
+      *hold=filename;
+           ^
+part3b.c: In function ‘main’:
+part3b.c:61:7: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘size_t’ [-Wformat=]
+       printf("\\Length of Input String:%d\\", strlen(string));
+       ^
+]0;seclab@SecurityLabUbuntu64: ~/HWA2seclab@SecurityLabUbuntu64:~/HWA2$ ./part3b
+
+
+Error: No Command Line arg for vuln was given
+
+
+Value of Test:7fffffffb3f8
+Value of filename[0]:7fffffffb400
+The attack buffer is going to need to be a little bit bigger than:ffff800000004c00
+]0;seclab@SecurityLabUbuntu64: ~/HWA2seclab@SecurityLabUbuntu64:~/HWA2$ ./part3bgcc -z execstack part3b.c -o part3b[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1@-[1@f[1@n[1@o[1@-[1@s[1@t[1@a[1@c[1@k[1@-[1@p[1@r[1@o[1@t[1@e[1@c[1@t[1@o[1@r
+part3b.c: In function ‘dumb’:
+part3b.c:43:11: warning: assignment makes integer from pointer without a cast [enabled by default]
+      *hold=filename;
+           ^
+part3b.c: In function ‘main’:
+part3b.c:61:7: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘size_t’ [-Wformat=]
+       printf("\\Length of Input String:%d\\", strlen(string));
+       ^
+]0;seclab@SecurityLabUbuntu64: ~/HWA2seclab@SecurityLabUbuntu64:~/HWA2$ /[K./part3b
+
+
+Error: No Command Line arg for vuln was given
+
+
+Value of Test:7fffffffb818
+Value of filename[0]:7fffffffb410
+The attack buffer is going to need to be a little bit bigger than:2b50
+Segmentation fault (core dumped)
+]0;seclab@SecurityLabUbuntu64: ~/HWA2seclab@SecurityLabUbuntu64:~/HWA2$ ./part3bgcc -fno-stack-protector part3b.c -o part3b[C[1@ [1@-[1@z[C[1@ [1@e[1@x[1@e[1@c[1@s[1@t[1@a[1@c[1@k
+part3b.c: In function ‘dumb’:
+part3b.c:43:11: warning: assignment makes integer from pointer without a cast [enabled by default]
+      *hold=filename;
+           ^
+part3b.c: In function ‘main’:
+part3b.c:61:7: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘size_t’ [-Wformat=]
+       printf("\\Length of Input String:%d\\", strlen(string));
+       ^
+]0;seclab@SecurityLabUbuntu64: ~/HWA2seclab@SecurityLabUbuntu64:~/HWA2$ ./part3b
+
+
+Error: No Command Line arg for vuln was given
+
+
+Value of Test:7fffffffb818
+Value of filename[0]:7fffffffb410
+The attack buffer is going to need to be a little bit bigger than:2b50
+$ ex  whoam i
+sh: 1: whoam: not found
+$ whoami
+seclab
+$ exist
+sh: 3: exist: not found
+$ exit
+]0;seclab@SecurityLabUbuntu64: ~/HWA2seclab@SecurityLabUbuntu64:~/HWA2$ exit
+Script done on Mon 07 Mar 2016 06:43:34 PM EST

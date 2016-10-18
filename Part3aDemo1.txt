@@ -1,0 +1,6 @@
+Script started on Sun Mar  6 15:26:46 2016
+$ ./part3a
+$ exit
+$ exit
+
+Script done on Sun Mar  6 15:26:53 2016

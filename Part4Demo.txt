@@ -1,0 +1,102 @@
+Script started on Mon 07 Mar 2016 06:45:36 PM EST
+]0;seclab@SecurityLabUbuntu64: ~/HWA2seclab@SecurityLabUbuntu64:~/HWA2$ gcc -zexe[K[K[Kexe[K[K[Kexe[K[K[K[K[K[K[K[K[Kgcc -z execstack -fno-stack [K-protector attack.c [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kgcc -z exc[Kect[Kstack -fno-stack-protector vuln.c -o vuln
+vuln.c: In function ‘dumb’:
+vuln.c:17:7: warning: assignment from incompatible pointer type [enabled by default]
+   hold=(int *)&test;
+       ^
+vuln.c:19:3: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 2 has type ‘long long unsigned int’ [-Wformat=]
+   printf("\n\nValue of Test:%x",(unsigned long long)&test);
+   ^
+vuln.c:20:3: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 2 has type ‘long long unsigned int’ [-Wformat=]
+   printf("\nValue of filename[0]:%x\n",(unsigned long long)filename);
+   ^
+vuln.c: In function ‘main’:
+vuln.c:36:7: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘size_t’ [-Wformat=]
+       printf("\nLength of Input String:%d\n", strlen(string));
+       ^
+]0;seclab@SecurityLabUbuntu64: ~/HWA2seclab@SecurityLabUbuntu64:~/HWA2$ gcc -z execstack -fno-stack-protector vuln.c -o vuln[K[K[K[K[K[K[K[K[K[K[K[K[K[Kattack.c attack[K[K[K[K[K[K[K -o attack
+attack.c: In function ‘main’:
+attack.c:36:7: warning: incompatible implicit declaration of built-in function ‘exit’ [enabled by default]
+       exit(0);
+       ^
+attack.c:40:14: warning: incompatible implicit declaration of built-in function ‘malloc’ [enabled by default]
+       buff = malloc(bsize); 
+              ^
+attack.c:41:12: warning: assignment makes pointer from integer without a cast [enabled by default]
+       addr = get_sp() -offset;
+            ^
+attack.c:42:7: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 2 has type ‘long long int *’ [-Wformat=]
+       printf("\nUsing address as guess for beginning of attack buffer: 0x%x\n", addr); 
+       ^
+attack.c:48:18: warning: assignment makes integer from pointer without a cast [enabled by default]
+       *(addr_ptr)=addr;
+                  ^
+attack.c:53:23: warning: assignment makes integer from pointer without a cast [enabled by default]
+       buff[bsize - 1] = (char*)NULL; 
+                       ^
+]0;seclab@SecurityLabUbuntu64: ~/HWA2seclab@SecurityLabUbuntu64:~/HWA2$ ./attack 1048 12032
+
+Using address as guess for beginning of attack buffer: 0xffffafd0
+
+Length of Input String:1046
+
+
+Value of Test:ffffb408
+Value of filename[0]:ffffb000
+
+You are going to need a buffer a little larger than:1032
+
+Segmentation fault (core dumped)
+]0;seclab@SecurityLabUbuntu64: ~/HWA2seclab@SecurityLabUbuntu64:~/HWA2$ ./attack 1048 12032[K[K48
+
+Using address as guess for beginning of attack buffer: 0xffffafc0
+
+Length of Input String:1046
+
+
+Value of Test:ffffb408
+Value of filename[0]:ffffb000
+
+You are going to need a buffer a little larger than:1032
+
+Segmentation fault (core dumped)
+]0;seclab@SecurityLabUbuntu64: ~/HWA2seclab@SecurityLabUbuntu64:~/HWA2$ ./attack 1048 12048[K[K88
+
+Using address as guess for beginning of attack buffer: 0xffffaf98
+
+Length of Input String:1046
+
+
+Value of Test:ffffb408
+Value of filename[0]:ffffb000
+
+You are going to need a buffer a little larger than:1032
+
+$ exit
+]0;seclab@SecurityLabUbuntu64: ~/HWA2seclab@SecurityLabUbuntu64:~/HWA2$ ./attack 1048 12088[K[K[K[K[K[K[K[K24 12088
+
+Using address as guess for beginning of attack buffer: 0xffffaf98
+
+Length of Input String:1022
+
+
+Value of Test:ffffb418
+Value of filename[0]:ffffb010
+
+You are going to need a buffer a little larger than:1032
+
+]0;seclab@SecurityLabUbuntu64: ~/HWA2seclab@SecurityLabUbuntu64:~/HWA2$ ./attack 1024 12088[1P 12088[1P 120886 120884 12088
+
+Using address as guess for beginning of attack buffer: 0xffffaf98
+
+Length of Input String:1062
+
+
+Value of Test:ffffb3f8
+Value of filename[0]:ffffaff0
+
+You are going to need a buffer a little larger than:1032
+
+Segmentation fault (core dumped)
+]0;seclab@SecurityLabUbuntu64: ~/HWA2seclab@SecurityLabUbuntu64:~/HWA2$ exit
+Script done on Mon 07 Mar 2016 06:51:41 PM EST

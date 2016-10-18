@@ -1,0 +1,14 @@
+Script started on Sun 06 Mar 2016 03:29:17 PM EST
+]0;seclab@SecurityLabUbuntu64: ~/HWA2seclab@SecurityLabUbuntu64:~/HWA2$ ./part2[K[K[K[K[K[K[Knano Part1Demo.txtls[K./part1ld part1.o -o part1[12P./part1ls[Knano Part1Demo.txt[Knano Part1Demo.txtls[Knano Part1Demo.txt[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kgcc art[K[K[Kpart3a.c -o part3a
+part3a.c: In function ‘main’:
+part3a.c:53:3: warning: passing argument 1 of ‘posix_memalign’ from incompatible pointer type [enabled by default]
+   posix_memalign(&buf, pagesize, strlen(shellcode)+10);
+   ^
+In file included from part3a.c:3:0:
+/usr/include/stdlib.h:503:12: note: expected ‘void **’ but argument is of type ‘char **’
+ extern int posix_memalign (void **__memptr, size_t __alignment, size_t __size)
+            ^
+]0;seclab@SecurityLabUbuntu64: ~/HWA2seclab@SecurityLabUbuntu64:~/HWA2$ ./part3a
+Segmentation fault (core dumped)
+]0;seclab@SecurityLabUbuntu64: ~/HWA2seclab@SecurityLabUbuntu64:~/HWA2$ exit
+Script done on Sun 06 Mar 2016 03:29:59 PM EST

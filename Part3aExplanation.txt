@@ -1,0 +1,9 @@
+mprotect can be used to make the stack executable.
+
+mprotect function is used to allow the protection for the memory pages. It changes the protection for the calling process memory pages containing any part of the address range in the interval [addr, addr+len-1] . addr must be aligned to a page memory.
+
+In the program the function is used to protect the interval of the buffer , address of the string. 
+
+PROT_EXEC will allocate the memory with the executing code. with PROT_READ and PROT_WRITE , the memory can be read and write.
+
+If the protection is not allowed the program tries to read or write outside the memory that is allocated for it which results in the signal SIGSEGV. This is called as segmentation violation.
